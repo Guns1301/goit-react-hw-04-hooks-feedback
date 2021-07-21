@@ -1,4 +1,4 @@
-import { useState } from "react"; //для того что б хранить состояние(state) в функциях , надо
+import { useState } from "react"; //что б хранить состояние(state) в функциях , надо импортировать
 import Section from "./Section/Section.js";
 import Statistics from "./Statistics/Statistics.js";
 import FeedbackOptions from "./FeedbackOptions/FeedbackOptions.js";
@@ -7,6 +7,7 @@ import Notification from "./Notification/Notification.js";
 import "./App.css";
 
 export default function App() {
+  // useState() возвращает [массив] из двух значений: первое значение - текущее значение state , второе -метод(функция) для обновления этого state
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
@@ -55,7 +56,7 @@ export default function App() {
             neutral={neutral}
             bad={bad}
             total={countTotalFeedback()}
-            feedbackPercentage={countPositiveFeedbackPercentage()}
+            positivePercentage={countPositiveFeedbackPercentage()}
           />
         ) : (
           <Notification msg="No Feedbacks - Sorry" />
